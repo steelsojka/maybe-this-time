@@ -1,14 +1,20 @@
 {
-  "name": "maybe-baby",
+  "name": "maybe-this-time",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "The Maybe Monad... this time",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prebuild": "npm run clean:build",
+    "clean:build": "rm -rf dist",
+    "build": "tsc -p tsconfig.build.json",
+    "test": "mocha --require ts-node/register src/**/*.spec.ts"
   },
-  "author": "",
+  "author": "Steven Sojka",
   "license": "ISC",
   "devDependencies": {
+    "@types/chai": "^4.0.4",
+    "@types/mocha": "^2.2.42",
+    "chai": "^4.1.2",
     "mocha": "^3.5.0",
     "ts-node": "^3.3.0",
     "typescript": "^2.5.2"
